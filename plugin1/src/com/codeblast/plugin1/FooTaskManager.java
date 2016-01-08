@@ -1,5 +1,6 @@
 package com.codeblast.plugin1;
 
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.externalSystem.model.ExternalSystemException;
 import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskId;
 import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskNotificationListener;
@@ -10,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class FooTaskManager extends AbstractExternalSystemTaskManager<FooExecutionSettings> {
+    protected static final Logger LOG = Logger.getInstance(FooTaskManager.class);
+
     @Override
     public void executeTasks(@NotNull ExternalSystemTaskId externalSystemTaskId, @NotNull List<String> tasks,
                              @NotNull String path, @Nullable FooExecutionSettings settings,
@@ -17,6 +20,7 @@ public class FooTaskManager extends AbstractExternalSystemTaskManager<FooExecuti
                              @Nullable String debug,
                              @NotNull ExternalSystemTaskNotificationListener externalSystemTaskNotificationListener)
             throws ExternalSystemException {
+        LOG.info("executeTasks");
         externalSystemTaskNotificationListener.onTaskOutput(externalSystemTaskId, "executeTasks", true);
         // TODO: more steps needed here...
     }
@@ -25,7 +29,8 @@ public class FooTaskManager extends AbstractExternalSystemTaskManager<FooExecuti
     public boolean cancelTask(@NotNull ExternalSystemTaskId externalSystemTaskId,
                               @NotNull ExternalSystemTaskNotificationListener externalSystemTaskNotificationListener)
             throws ExternalSystemException {
-        externalSystemTaskNotificationListener.onTaskOutput(externalSystemTaskId, "cancelTask.", true);
+        LOG.info("cancelTask");
+        externalSystemTaskNotificationListener.onTaskOutput(externalSystemTaskId, "cancelTask", true);
         return false;
     }
 }
