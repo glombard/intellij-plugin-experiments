@@ -1,0 +1,39 @@
+<idea-plugin version="2">
+    <id>com.codeblast.plugin1</id>
+    <name>Foo plugin</name>
+    <version>1.0</version>
+    <vendor email="gert@codeblast.com" url="http://www.codeblast.com">Codeblast</vendor>
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0" until-build="143.1184"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectImportProvider implementation="com.codeblast.plugin1.FooProjectImportProvider"/>
+        <projectImportBuilder implementation="com.codeblast.plugin1.FooProjectImportBuilder"/>
+        <externalSystemManager implementation="com.codeblast.plugin1.FooSystemManager"/>
+        <projectService serviceImplementation="com.codeblast.plugin1.FooSettings"/>
+        <projectService serviceImplementation="com.codeblast.plugin1.FooLocalSettings"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+</idea-plugin>
