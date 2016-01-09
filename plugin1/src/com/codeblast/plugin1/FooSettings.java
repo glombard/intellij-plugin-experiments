@@ -58,6 +58,7 @@ public class FooSettings extends AbstractExternalSystemSettings<FooSettings, Foo
     @Override
     public void loadState(FooSettings.FooState fooState) {
         LOG.info("loadSate");
+        super.loadState(fooState);
     }
 
     @NotNull

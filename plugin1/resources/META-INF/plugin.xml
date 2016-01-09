@@ -30,6 +30,8 @@
         <externalSystemManager implementation="com.codeblast.plugin1.FooSystemManager"/>
         <projectService serviceImplementation="com.codeblast.plugin1.FooSettings"/>
         <projectService serviceImplementation="com.codeblast.plugin1.FooLocalSettings"/>
+        <toolWindow id="Foo" anchor="right" icon="Icons.Icon"
+                    factoryClass="com.codeblast.plugin1.FooToolWindowFactory"/>
     </extensions>
 
     <actions>
