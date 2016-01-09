@@ -1,0 +1,32 @@
+<idea-plugin version="2">
+  <id>com.codeblast.intellij.salmon</id>
+  <name>Test report collector</name>
+  <version>1.0.0</version>
+  <vendor email="gert.lombard@gmail.com" url="http://www.codeblast.com">Gert Lombard</vendor>
+
+  <description><![CDATA[
+      Collects test results from external JUnit report XML files.
+    ]]></description>
+
+  <change-notes><![CDATA[
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <configurationType implementation="com.codeblast.intellij.salmon.config.SalmonConfigurationType" />
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
